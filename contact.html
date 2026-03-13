@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CONTACT｜All Brain</title>
+  <meta name="description" content="All Brainへのお問い合わせはこちらから。">
+  <link rel="icon" href="img/logo-square.png" type="image/png">
+  <link rel="apple-touch-icon" href="img/logo-square.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header header--solid" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="img/logo-horizontal.png" alt="All Brain" class="header__logo-img">
+      </a>
+      <nav class="header__nav" id="nav">
+        <ul class="header__nav-list">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="index.html#philosophy">PHILOSOPHY</a></li>
+          <li><a href="index.html#service">SERVICE</a></li>
+          <li><a href="index.html#company">COMPANY</a></li>
+          <li><a href="contact.html" class="btn btn--header">CONTACT</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-hero__title">CONTACT</h1>
+      <p class="page-hero__desc">お問い合わせ</p>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM -->
+  <section class="section section--contact">
+    <div class="container container--narrow">
+      <p class="contact__lead animate-on-scroll">
+        サービスに関するご相談、お見積もり、その他ご質問など、<br>
+        下記フォームよりお気軽にお問い合わせください。<br>
+        担当者より2営業日以内にご連絡いたします。
+      </p>
+      <form class="contact-form animate-on-scroll" action="#" method="POST">
+        <div class="form-group">
+          <label for="company">会社名</label>
+          <input type="text" id="company" name="company" placeholder="例：株式会社○○">
+        </div>
+        <div class="form-group">
+          <label for="name">お名前 <span class="required">必須</span></label>
+          <input type="text" id="name" name="name" required placeholder="例：山田 太郎">
+        </div>
+        <div class="form-group">
+          <label for="email">メールアドレス <span class="required">必須</span></label>
+          <input type="email" id="email" name="email" required placeholder="例：info@example.com">
+        </div>
+        <div class="form-group">
+          <label for="phone">電話番号</label>
+          <input type="tel" id="phone" name="phone" placeholder="例：03-1234-5678">
+        </div>
+        <div class="form-group">
+          <label for="subject">ご相談内容</label>
+          <select id="subject" name="subject">
+            <option value="">選択してください</option>
+            <option value="web">WEBマーケティングについて</option>
+            <option value="dx">DXコンサルティングについて</option>
+            <option value="report">World Reportについて</option>
+            <option value="other">その他</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">お問い合わせ内容 <span class="required">必須</span></label>
+          <textarea id="message" name="message" rows="6" required placeholder="お問い合わせ内容をご記入ください"></textarea>
+        </div>
+        <div class="form-group form-group--checkbox">
+          <label>
+            <input type="checkbox" required>
+            <a href="privacy.html" target="_blank">プライバシーポリシー</a>に同意する
+          </label>
+        </div>
+        <div class="form-group form-group--submit">
+          <button type="submit" class="btn btn--primary btn--large">送信する</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo">
+            <img src="img/logo-horizontal.png" alt="All Brain" class="footer__logo-img">
+          </a>
+          <p class="footer__copy">&copy; 2024 All Brain LLC. All Rights Reserved.</p>
+        </div>
+        <nav class="footer__nav">
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="index.html#service">SERVICE</a></li>
+            <li><a href="index.html#company">COMPANY</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="privacy.html">PRIVACY POLICY</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
