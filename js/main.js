@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
     });
 
-    // Close menu on link click
     nav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         hamburger.classList.remove('active');
@@ -39,14 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ---------- Scroll animations (staggered) ----------
+  // ---------- Scroll animations ----------
   const animatedElements = document.querySelectorAll('.animate-on-scroll');
 
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // Get siblings that are also entering
           const el = entry.target;
           const parent = el.parentElement;
           const siblings = parent ? parent.querySelectorAll('.animate-on-scroll') : [el];
@@ -78,10 +76,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (particlesContainer) {
     const colors = [
-      'rgba(232, 97, 77, 0.4)',   // orange (from logo)
-      'rgba(124, 92, 191, 0.3)',   // purple (from logo)
-      'rgba(91, 192, 222, 0.4)',   // cyan (from logo)
-      'rgba(67, 97, 238, 0.3)',    // accent blue
+      'rgba(232, 97, 77, 0.4)',
+      'rgba(124, 92, 191, 0.3)',
+      'rgba(91, 192, 222, 0.4)',
+      'rgba(67, 97, 238, 0.3)',
     ];
 
     function createParticle() {
@@ -104,13 +102,12 @@ document.addEventListener('DOMContentLoaded', () => {
       particlesContainer.appendChild(particle);
     }
 
-    // Create particles
     for (let i = 0; i < 30; i++) {
       createParticle();
     }
   }
 
-  // ---------- Smooth scroll for anchor links ----------
+  // ---------- Smooth scroll ----------
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const targetId = this.getAttribute('href');
