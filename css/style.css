@@ -1,24 +1,26 @@
 /* ======================================
-   All Brain - Corporate Site Style
+   All Brain - Corporate Site Style (Light)
+   Aligned with World Report theme
    ====================================== */
 
 /* ---------- Reset & Base ---------- */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --color-primary: #1a1a2e;
+  --color-primary: #1a3a5c;
   --color-accent: #4a6cf7;
   --color-accent-dark: #3a56d4;
   --color-accent-light: #eef2ff;
   --color-orange: #e8614d;
   --color-purple: #7c5cbf;
-  --color-cyan: #5bc0de;
+  --color-cyan: #0ea5e9;
   --color-green: #22c55e;
-  --color-text: #333;
-  --color-text-light: #666;
+  --color-text: #1e293b;
+  --color-text-light: #64748b;
   --color-bg: #ffffff;
-  --color-bg-gray: #f7f8fc;
-  --color-border: #e5e7eb;
+  --color-bg-gray: #f8fafc;
+  --color-bg-hero: #f0f4ff;
+  --color-border: #e2e8f0;
   --font-jp: 'Noto Sans JP', sans-serif;
   --font-en: 'Inter', sans-serif;
   --max-width: 1200px;
@@ -79,14 +81,15 @@ img { max-width: 100%; height: auto; display: block; }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 1000;
-  background: rgba(255,255,255,0.92);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
   transition: box-shadow 0.3s;
   height: var(--header-height);
 }
 
 .header.is-scrolled {
-  box-shadow: 0 1px 12px rgba(0,0,0,0.06);
+  box-shadow: 0 2px 16px rgba(26, 58, 92, 0.06);
 }
 
 .header__inner {
@@ -124,7 +127,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 .header__nav-list a:hover { color: var(--color-accent); }
 
-/* Button */
+/* ---------- Buttons ---------- */
 .btn {
   display: inline-block;
   font-family: var(--font-en);
@@ -160,7 +163,7 @@ img { max-width: 100%; height: auto; display: block; }
 .btn--primary:hover {
   background: var(--color-accent-dark);
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(74,108,247,0.3);
+  box-shadow: 0 4px 16px rgba(74, 108, 247, 0.25);
 }
 
 .btn--white {
@@ -169,14 +172,16 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--color-accent);
   border-radius: 8px;
   font-size: 0.9rem;
+  border: 1px solid var(--color-border);
 }
 
 .btn--white:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(255,255,255,0.3);
+  box-shadow: 0 4px 16px rgba(74, 108, 247, 0.12);
+  border-color: var(--color-accent);
 }
 
-/* Hamburger */
+/* ---------- Hamburger ---------- */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -209,7 +214,7 @@ img { max-width: 100%; height: auto; display: block; }
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* ---------- Hero ---------- */
+/* ---------- Hero (Light – World Report style) ---------- */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -218,8 +223,32 @@ img { max-width: 100%; height: auto; display: block; }
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(165deg, #eef2ff 0%, #f5f0ff 30%, #fff0f0 60%, #eef2ff 100%);
+  background: linear-gradient(135deg, var(--color-bg-hero) 0%, #e0ecff 50%, #f0f4ff 100%);
   overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -15%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(74, 108, 247, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 .hero__bg {
@@ -252,7 +281,7 @@ img { max-width: 100%; height: auto; display: block; }
 .hero__sub {
   font-family: var(--font-en);
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.2em;
   color: var(--color-accent);
   margin-bottom: 20px;
@@ -306,6 +335,22 @@ img { max-width: 100%; height: auto; display: block; }
   50% { transform: scaleY(1); transform-origin: top; }
   50.1% { transform: scaleY(1); transform-origin: bottom; }
   100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* ---------- Hero Particles ---------- */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  bottom: -10px;
+  opacity: 0;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  0% { opacity: 0; transform: translateY(0) scale(0.5); }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.6; }
+  100% { opacity: 0; transform: translateY(-100vh) scale(1); }
 }
 
 /* ---------- Section Common ---------- */
@@ -379,7 +424,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 .philosophy__card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  box-shadow: 0 8px 24px rgba(26, 58, 92, 0.08);
 }
 
 .philosophy__card-icon {
@@ -426,7 +471,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 .service-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+  box-shadow: 0 12px 32px rgba(26, 58, 92, 0.08);
   border-color: var(--color-accent);
 }
 
@@ -529,11 +574,11 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--color-text-light);
 }
 
-/* ---------- CTA ---------- */
+/* ---------- CTA (Light – World Report style) ---------- */
 .cta {
   padding: 80px 0;
-  background: linear-gradient(135deg, var(--color-primary) 0%, #16213e 100%);
-  color: #fff;
+  background: linear-gradient(135deg, var(--color-bg-hero) 0%, #dbeafe 100%);
+  color: var(--color-text);
   text-align: center;
 }
 
@@ -547,11 +592,12 @@ img { max-width: 100%; height: auto; display: block; }
   font-size: 1.6rem;
   font-weight: 700;
   margin-bottom: 16px;
+  color: var(--color-primary);
 }
 
 .cta__desc {
   font-size: 0.9rem;
-  color: rgba(255,255,255,0.75);
+  color: var(--color-text-light);
   line-height: 1.9;
   margin-bottom: 32px;
 }
@@ -574,13 +620,13 @@ img { max-width: 100%; height: auto; display: block; }
 .footer__logo-img {
   height: 24px;
   width: auto;
-  filter: brightness(0) invert(0.4);
+  opacity: 0.5;
 }
 
 .footer__copy {
   font-family: var(--font-en);
   font-size: 0.7rem;
-  color: #999;
+  color: #94a3b8;
   margin-top: 8px;
 }
 
@@ -613,7 +659,7 @@ img { max-width: 100%; height: auto; display: block; }
     background: #fff;
     padding: 80px 32px 32px;
     transition: right 0.3s ease;
-    box-shadow: -4px 0 20px rgba(0,0,0,0.1);
+    box-shadow: -4px 0 20px rgba(26, 58, 92, 0.1);
   }
 
   .header__nav.is-open { right: 0; }
@@ -706,32 +752,5 @@ img { max-width: 100%; height: auto; display: block; }
 
   .philosophy__content {
     gap: 32px;
-  }
-}
-
-
-/* ---------- Hero Particles ---------- */
-.particle {
-  position: absolute;
-  border-radius: 50%;
-  bottom: -10px;
-  opacity: 0;
-  animation: floatUp linear infinite;
-}
-
-@keyframes floatUp {
-  0% {
-    opacity: 0;
-    transform: translateY(0) scale(0.5);
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-100vh) scale(1);
   }
 }
