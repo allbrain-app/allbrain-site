@@ -4,41 +4,41 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ---------- Header scroll effect ----------
+  /* ---------- Header scroll effect ---------- */
   const header = document.getElementById('header');
 
   const handleScroll = () => {
     if (window.scrollY > 50) {
-      header.classList.add('header--scrolled');
+      header.classList.add('is-scrolled');
     } else {
-      header.classList.remove('header--scrolled');
+      header.classList.remove('is-scrolled');
     }
   };
 
   window.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll();
 
-  // ---------- Hamburger menu ----------
+  /* ---------- Hamburger menu ---------- */
   const hamburger = document.getElementById('hamburger');
   const nav = document.getElementById('nav');
 
   if (hamburger && nav) {
     hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      nav.classList.toggle('open');
-      document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
+      hamburger.classList.toggle('is-active');
+      nav.classList.toggle('is-open');
+      document.body.style.overflow = nav.classList.contains('is-open') ? 'hidden' : '';
     });
 
     nav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        nav.classList.remove('open');
+        hamburger.classList.remove('is-active');
+        nav.classList.remove('is-open');
         document.body.style.overflow = '';
       });
     });
   }
 
-  // ---------- Scroll animations ----------
+  /* ---------- Scroll animations ---------- */
   const animatedElements = document.querySelectorAll('.animate-on-scroll');
 
   const observer = new IntersectionObserver(
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
           siblings.forEach((sib) => {
             if (sib === el) {
               setTimeout(() => {
-                el.classList.add('visible');
+                el.classList.add('is-visible');
               }, delay);
             }
             delay += 120;
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   animatedElements.forEach(el => observer.observe(el));
 
-  // ---------- Hero particles ----------
+  /* ---------- Hero particles ---------- */
   const particlesContainer = document.getElementById('particles');
 
   if (particlesContainer) {
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // ---------- Smooth scroll ----------
+  /* ---------- Smooth scroll ---------- */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const targetId = this.getAttribute('href');
